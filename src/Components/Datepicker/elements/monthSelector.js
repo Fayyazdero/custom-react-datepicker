@@ -16,7 +16,7 @@ export const MonthSelector = ({ month, onSelect = noop }) => {
     return (
       <>
       <select className="dropdown"
-        value={getMonth(month) + "&#x2304; dkjfnjkd"}
+        value={getMonth(month)}
         onChange={({ target: { value } }) =>
         onSelect(setMonth(parseInt(value), month))
         }
