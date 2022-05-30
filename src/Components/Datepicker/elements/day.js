@@ -50,7 +50,12 @@ export const Day = ({
     const last = end && isSameDay(end, value);
   console.log({first, last})
     return (
-      <div
+      <div className={cx("days-parent", {
+        first,
+        last
+      })}>
+
+      <p
         role="button"
         tabIndex={0}
         ref={ref}
@@ -68,6 +73,7 @@ export const Day = ({
         onClick={() => onChange(value)}
       >
         {format("d", value)}
-      </div>
+      </p>
+        </div>
     );
   };

@@ -9,9 +9,9 @@ import {
 import startOfWeek from "date-fns/startOfWeek";
 import endOfWeek from "date-fns/startOfWeek";
 import { Day } from "./day";
-import "./../../../App.css";
-const WEEK_STARTS_ON = 1;
 
+
+const WEEK_STARTS_ON = 1;
 
 export const Month = ({
     month,

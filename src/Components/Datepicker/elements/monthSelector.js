@@ -22,14 +22,14 @@ export const MonthSelector = ({ month, onSelect = noop }) => {
         }
       >
         {months.map((x, idx) => (
-          <option key={idx} value={getMonth(x)}>
+          <option className="hello" key={idx} value={getMonth(x)}>
             {formatter(x)}
           </option>
           
           ))}
         
       </select>
-      <div className="arrow"/>
+      <div className="arrow" />
       
   
           </>

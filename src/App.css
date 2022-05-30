@@ -26,7 +26,12 @@
   border-radius: 15px;
   overflow: hidden;
 }
+
+.week {
+  display: flex;
+}
 .day {
+  padding: 0;
   width: 30px;
   height: 30px;
   display: inline-flex;
@@ -37,6 +42,7 @@
 font-size: 14px;
 font-weight: 400;
 line-height: 18px;
+margin: 0;
 letter-spacing: 0em;
 text-align: center;
 }
@@ -52,11 +58,9 @@ text-align: center;
   letter-spacing: 0.02em;
   text-align: center;
 }
-.day + .day {
-  padding-left: 4px;
-}
 .day:hover {
-  background: rgba(0, 128, 0, 0.5);
+  background: hsl(0deg 0% 97%);
+  border-radius: 50%;
 }
 .day:hover.in-range,
 .day:hover.selected {
@@ -68,16 +72,14 @@ text-align: center;
 .day.grayout {
   opacity: 0.2;
 }
-.day.weekend {
-  /* color:red; */
-}
 .day.in-range {
   background: hsl(0deg 0% 97%);
 }
 
 
 .day.selected {
-  background: hsl(181deg 83% 63%);
+  background-color: hsl(176deg 82% 63%);
+  border-radius: 50%;
 }
 .controls {
   width: 100%;
@@ -93,8 +95,12 @@ text-align: center;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+
+  max-height: 30px;
+    max-width: 30px;
+    padding: 0;
 }
-.controls > button + button {
+.controls > p + p {
   margin-left: 4px;
 }
 
@@ -103,6 +109,23 @@ text-align: center;
 }
 .inputs-wrapper {
   margin-top: 10px;
+}
+.days-parent.first {
+  height: 30px;
+  width: 30px;
+  background-color: hsl(0deg 0% 97%) !important;
+  border-radius: 0px !important;
+  border-top-left-radius: 50% !important;
+  border-bottom-left-radius: 50% !important;
+}
+
+.days-parent.last {
+  height: 30px;
+  width: 30px;
+  background-color: hsl(0deg 0% 97%) !important;
+  border-radius: 0px !important;
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
 }
 
 .first {
@@ -128,6 +151,9 @@ select {
   -moz-appearance: none;
 }
 
+select:focus-visible {
+  outline: none;
+}
 .arrow {
   position: relative;
   left: -13px;
@@ -139,4 +165,8 @@ select {
   border-color: grey;
   border-width: 0px 1px 1px 0px;
   transform: rotate(45deg);
+}
+
+select .hello {
+  width: 400px !important;
 }
