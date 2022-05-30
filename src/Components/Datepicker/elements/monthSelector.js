@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { times, identity, splitEvery } from "ramda";
+import { times, identity } from "ramda";
 import {
   addMonths,
   format,
@@ -8,9 +7,7 @@ import {
   startOfYear,
 } from "date-fns/fp";
 
-import "./App.css";
 const noop = () => {};
-const WEEK_STARTS_ON = 1;
 
 export const MonthSelector = ({ month, onSelect = noop }) => {
     const sy = startOfYear(month);

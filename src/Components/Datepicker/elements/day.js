@@ -1,5 +1,4 @@
-import React, {useRef} from "react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import cx from "classnames";
 import {
   format,
@@ -8,8 +7,6 @@ import {
   isWeekend,
   isWithinInterval,
 } from "date-fns/fp";
-
-import "./App.css";
 
 
 export const Day = ({

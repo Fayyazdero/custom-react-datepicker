@@ -8,7 +8,8 @@ import {
 } from "date-fns/fp";
 import startOfWeek from "date-fns/startOfWeek";
 import endOfWeek from "date-fns/startOfWeek";
-import "./App.css";
+import { Day } from "./day";
+import "./../../../App.css";
 const WEEK_STARTS_ON = 1;
 
 

@@ -1,12 +1,22 @@
-import React, {useState} from "react";
+import React from "react";
 import { useCallback, useState } from "react";
 import {
   addDays,
-  addMonths,
-  
+  addMonths
 } from "date-fns/fp";
-import arrow_right from "./assests/left-chevron.png";
-import arrow_left from "./assests/chevron.png";
+import arrow_right from "./../../../assests/left-chevron.png";
+import arrow_left from "./../../../assests/chevron.png";
+import { Month } from "./month";
+import { MonthSelector } from "./monthSelector";
+import { YearSelector } from "./yearSelector";
+
+const noop = () => {};
+const keyMap = {
+    ArrowUp: -7,
+    ArrowDown: 7,
+    ArrowLeft: -1,
+    ArrowRight: 1,
+  };
 
 export const DatePicker = ({
     onChange = noop,
