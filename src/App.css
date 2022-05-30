@@ -1,38 +1,142 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+
+.datepicker {
+  display: inline-block;
+  width: 640px;
+  user-select: none;
+}
+.months-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.month-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+.month-wrapper .month-title {
+  display: flex;
+  justify-content: space-between;
+}
+.month-wrapper .month {
+  padding: 4px;
+}
+.month-wrapper .month .week + .week {
+  margin-top: 4px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.day {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Montserrat';
+font-size: 14px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: center;
+}
+
+.weekNames {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.day + .day {
+  padding-left: 4px;
+}
+.day:hover {
+  background: rgba(0, 128, 0, 0.5);
+}
+.day:hover.in-range,
+.day:hover.selected {
+  border-color: blue;
+}
+.day.today {
+  border-color: blue;
+}
+.day.grayout {
+  opacity: 0.2;
+}
+.day.weekend {
+  /* color:red; */
+}
+.day.in-range {
+  background: hsl(0deg 0% 97%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.day.selected {
+  background: hsl(181deg 83% 63%);
+}
+.controls {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 4px;
+  justify-content: space-between;
+}
+.controls > button {
+  background-color: hsl(0deg 0% 97%);
+  border: none;
+  border-radius: 50%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border-radius: 50%;
+}
+.controls > button + button {
+  margin-left: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.controls img {
+  height: 20px;
+}
+.inputs-wrapper {
+  margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.first {
+  border-radius: 50%;
+  background-color: hsl(178deg 78% 60%) !important;
+}
+.last {
+  background-color: yellow !important;
+  border-radius: 50%;
+}
+
+select {
+  border: none;
+  background: transparent;
+  color: solid black !important;
+  padding: 0 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 22px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.arrow {
+  position: relative;
+  left: -13px;
+  top: 3px;
+  box-sizing: border-box;
+  height: 10px;
+  width: 10px;
+  border-style: solid;
+  border-color: grey;
+  border-width: 0px 1px 1px 0px;
+  transform: rotate(45deg);
 }
