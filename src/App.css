@@ -85,27 +85,28 @@ text-align: center;
   width: 100%;
   display: flex;
   margin-top: 4px;
+  align-items: center;
   justify-content: space-between;
 }
 .controls > button {
+  position: relative;
+  bottom: 5px;
   background-color: hsl(0deg 0% 97%);
   border: none;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
 
-  max-height: 30px;
-    max-width: 30px;
-    padding: 0;
+  max-height: 15px;
+      padding: 0;
 }
 .controls > p + p {
   margin-left: 4px;
 }
 
 .controls img {
-  height: 20px;
+  height: 15px;
 }
 .inputs-wrapper {
   margin-top: 10px;
@@ -137,7 +138,8 @@ text-align: center;
   border-radius: 50%;
 }
 
-select {
+.custom-select {
+  position: relative;
   border: none;
   background: transparent;
   color: solid black !important;
@@ -146,7 +148,7 @@ select {
   font-weight: bolder;
   font-size: 16px;
   line-height: 22px;
-
+  text-align: right;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -167,6 +169,69 @@ select:focus-visible {
   transform: rotate(45deg);
 }
 
-select .hello {
-  width: 400px !important;
+.option {
+  text-align: center;
+  width: fit-content;
+  border-radius: 4px;
+    background: #fff;
+    padding: 0px 40px;
 }
+
+/* .select-wrapper {
+  position: relative;
+  display: inline-flex;
+  height: 32px;
+  border-radius: 4px;
+} */
+.dropdown {
+  z-index: 9;
+  position: absolute;
+  background: #fff;
+  right: 0;
+  min-width: max-content;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  max-height: 240px;
+  height: 0;
+}
+
+.dropdown.open {
+  height: auto;
+}
+.icon{
+
+  transition: 0.2s all ease-in-out;
+  margin-left: 8px;
+  top: -2px;
+  position: relative;
+}
+
+.label {
+  position: relative;
+  top: 1px;
+  min-width: max-content;
+  width: calc(100% - 20px);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+  svg {
+  transition: 0.2s all ease-in-out;
+  }
+
+  .option.active {
+    background-color: #e7e7e7;
+  }
+
+  .dropdownWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } 

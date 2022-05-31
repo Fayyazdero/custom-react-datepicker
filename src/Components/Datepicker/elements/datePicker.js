@@ -29,7 +29,9 @@ export const DatePicker = ({
   const nextMonth = addMonths(1, monthView);
 
   const handleSelect = useCallback(
+    
     (x) => {
+      console.log(x, 'dddd')
       if (!end) {
         const min = Math.min();
         const sorted = [start, x]
