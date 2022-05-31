@@ -56,6 +56,8 @@ export const DatePicker = ({
     }
   };
 
+  console.log(monthView, "F" )
+
   return (
     <div className="datepicker" onKeyDown={handleKeyPress}>
       <div className="months-wrapper">
@@ -68,14 +70,14 @@ export const DatePicker = ({
           selected={selected}
           customHeader={
             <div className="controls">
-              <button onClick={increment(-1)}>
+              <button onClick={increment(-1)} >
                 {" "}
                 <img className="arrow_icons" src={arrow_right} />
               </button>
 
               <MonthSelector month={monthView} onSelect={setMonthView} />
               <YearSelector year={monthView} onSelect={setMonthView} />
-              <button onClick={increment(1)}>
+              <button onClick={increment(1)} month={monthView}>
                 {" "}
                 <img className="arrow_icons" src={arrow_left} />{" "}
               </button>

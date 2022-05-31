@@ -29,15 +29,23 @@ export const YearSelector = ({ year, onSelect = noop }) => {
         </span>
         <div className={`dropdown ${open && "open"}`}>
           <div className="dropdownWrapper">
+            <div className="dropdown-heading">
+              {value}
+              <div className="downArrow">
+                <ArrowDownIcon />
+              </div>
+            </div>
             {years.map((item, i) => {
               return (
-                <div
-                  className={`option ${value === item && "active"}`}
-                  key={`${i}`}
-                  onClick={() => handleSelect(item)}
-                >
-                  {format("yyyy", item)}
-                </div>
+                <>
+                  <div
+                    className={`option ${value === item && "active"}`}
+                    key={`${i}`}
+                    onClick={() => handleSelect(item)}
+                  >
+                    {format("yyyy", item)}
+                  </div>
+                </>
               );
             })}
           </div>

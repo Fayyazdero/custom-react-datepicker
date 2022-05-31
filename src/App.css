@@ -38,13 +38,13 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-family: 'Montserrat';
-font-size: 14px;
-font-weight: 400;
-line-height: 18px;
-margin: 0;
-letter-spacing: 0em;
-text-align: center;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0;
+  letter-spacing: 0em;
+  text-align: center;
 }
 
 .weekNames {
@@ -76,7 +76,6 @@ text-align: center;
   background: hsl(0deg 0% 97%);
 }
 
-
 .day.selected {
   background-color: hsl(176deg 82% 63%);
   border-radius: 50%;
@@ -99,7 +98,7 @@ text-align: center;
   border-radius: 50%;
 
   max-height: 15px;
-      padding: 0;
+  padding: 0;
 }
 .controls > p + p {
   margin-left: 4px;
@@ -173,16 +172,15 @@ select:focus-visible {
   text-align: center;
   width: fit-content;
   border-radius: 4px;
-    background: #fff;
-    padding: 0px 40px;
+  background: #fff;
+  padding: 0px 40px;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  font-size: 14px;
+  line-height: 22px;
 }
 
-/* .select-wrapper {
-  position: relative;
-  display: inline-flex;
-  height: 32px;
-  border-radius: 4px;
-} */
 .dropdown {
   z-index: 9;
   position: absolute;
@@ -200,8 +198,7 @@ select:focus-visible {
 .dropdown.open {
   height: auto;
 }
-.icon{
-
+.icon {
   transition: 0.2s all ease-in-out;
   margin-left: 8px;
   top: -2px;
@@ -221,17 +218,31 @@ select:focus-visible {
   font-weight: 500;
   text-transform: capitalize;
 }
-  svg {
+svg {
   transition: 0.2s all ease-in-out;
-  }
+}
 
-  .option.active {
-    background-color: #e7e7e7;
-  }
+.option.active {
+  background-color: #e7e7e7;
+}
 
-  .dropdownWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  } 
+.dropdownWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-heading {
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 5px;
+}
+
+.dropdown-heading svg {
+  transform: rotate(180deg);
+}

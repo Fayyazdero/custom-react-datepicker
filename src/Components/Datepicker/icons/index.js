@@ -10,6 +10,7 @@ export const ArrowDownIcon = () => (
       strokeLinecap="round"
       strokeLinejoin="round"
       className="feather feather-chevron-down"
+      color="#dcd8d8"
     >
       <polyline points="6 9 12 15 18 9"></polyline>
     </svg>

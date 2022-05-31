@@ -8,23 +8,23 @@ import {
   startOfYear,
 } from "date-fns/fp";
 import { ArrowDownIcon } from "../icons";
-import './../../../App.css'
+import "./../../../App.css";
 const noop = () => {};
 
 export const MonthSelector = ({ month, onSelect = noop }) => {
-  const formatter = format("MMM");
+  const formatter = format("LLLL");
   const sy = startOfYear(month);
   const months = times(identity, 12).map((_, idx) => addMonths(idx, sy));
-  
-  const [open, setOpen] = useState(false)
-  const [value, setValue] = useState(getMonth(month))
+
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(getMonth(month));
   const handleSelect = (e) => {
-          onSelect(setMonth(parseInt(getMonth(e)), month))
-          setValue(e)
-  }
+    onSelect(setMonth(parseInt(getMonth(e)), month));
+    setValue(e);
+  };
   const toggle = (e) => {
-    setOpen(!open)
-  }
+    setOpen(!open);
+  };
   return (
     <>
       {/* <select
@@ -43,28 +43,41 @@ export const MonthSelector = ({ month, onSelect = noop }) => {
       <div className="arrow" /> */}
 
       <div className="select-wrapper custom-select" onClick={toggle}>
-      <span className="label">
-        {formatter(value)}
-        <span className="icon" open={open}>
-          <ArrowDownIcon />
+        <span className="label">
+          {formatter(value)}
+          <span className="icon" open={open}>
+            <ArrowDownIcon />
+          </span>
         </span>
-      </span>
-      <div className={`dropdown ${open && 'open' }`} >
-        <div className="dropdownWrapper">
-          {months.map((item, i)  => (
-            <div className={`option ${formatter(value) === formatter(item) && "active"}`}
-              key={`${i}`}
-              onClick={() => handleSelect(item)}
-              // onClick={(e) => {
-              //   if (!item.readOnly) handleSelect(item)
-              // }}
-            >
-              {formatter(item)}
+        <div className={`dropdown ${open && "open"}`}>
+          <div className="dropdown-heading">
+            {formatter(value)}
+            <div className="downArrow">
+              <ArrowDownIcon />
             </div>
-          ))}
-        </div >
+          </div>
+          <div className="dropdownWrapper">
+            {months.map((item, i) => {
+              return (
+                <>
+                  <p
+                    className={`option ${
+                      formatter(value) === formatter(item) && "active"
+                    }`}
+                    key={`${i}`}
+                    onClick={() => handleSelect(item)}
+                    // onClick={(e) => {
+                    //   if (!item.readOnly) handleSelect(item)
+                    // }}
+                  >
+                    {formatter(item)}
+                  </p>
+                </>
+              );
+            })}
+          </div>
+        </div>
       </div>
-    </div>
     </>
   );
 };
